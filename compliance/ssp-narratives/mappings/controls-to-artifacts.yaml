@@ -1,0 +1,12 @@
+AC-2:
+  - artifacts/exports/safe-acls-*.csv
+  - artifacts/policy/master-policy.json
+IA-5:
+  - artifacts/platforms/password-policy.json
+  - artifacts/platforms/ssh-policy.json
+AU-6:
+  - artifacts/pta/detections/*.json
+IR-4:
+  - artifacts/siem/queries/*
+CM-6:
+  - artifacts/change-records/*.pdf

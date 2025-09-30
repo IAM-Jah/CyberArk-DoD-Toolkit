@@ -1,0 +1,3 @@
+- Assert `statusCode === 200` on auth and admin operations.
+- Verify response schemas include SafeName, ManagingCPM, and policy flags.
+- Persist key responses to `./artifacts/exports` with timestamps for evidence.

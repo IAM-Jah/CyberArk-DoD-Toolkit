@@ -1,0 +1,4 @@
+- name: Add audit rule for PSM keys
+  ansible.windows.win_lineinfile:
+    path: 'C:\Windows\System32\LogFiles\PSM\audit.rules'
+    line: 'AUDIT /var/psm/keys (example placeholder)'

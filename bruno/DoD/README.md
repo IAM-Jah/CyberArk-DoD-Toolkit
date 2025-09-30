@@ -1,0 +1,1 @@
+Bruno collections tailored for **DoD** deployments. Use `environments/NIPR.bru` (or create `SIPR.bru`) and run `collections/PAM-Admin.bru`. Responses can be exported to `./artifacts/exports/` for ATO evidence (configure Bruno save rules).

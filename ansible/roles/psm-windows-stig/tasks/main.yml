@@ -1,0 +1,11 @@
+- name: Include TLS hardening
+  ansible.builtin.import_tasks: tls.yml
+
+- name: Include RDP/NLA tuning
+  ansible.builtin.import_tasks: rdp.yml
+
+- name: Include PSM install/config
+  ansible.builtin.import_tasks: psm-install.yml
+
+- name: Configure audit policies
+  ansible.builtin.import_tasks: audit.yml

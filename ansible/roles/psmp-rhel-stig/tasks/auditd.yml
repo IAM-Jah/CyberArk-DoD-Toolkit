@@ -1,0 +1,4 @@
+- name: Add audit rules for PSMP directories (placeholder)
+  ansible.builtin.lineinfile:
+    path: /etc/audit/rules.d/psmp.rules
+    line: "-w /var/opt/CARKpsmp -p wa -k psmp"

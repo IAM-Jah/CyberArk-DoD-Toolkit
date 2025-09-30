@@ -1,0 +1,10 @@
+- name: Copy PSM Connection Components (example)
+  ansible.windows.win_copy:
+    src: psm-connection-components/
+    dest: 'C:\Program Files (x86)\CyberArk\PSM\Components\'
+
+- name: Enforce session idle timeout
+  ansible.windows.win_lineinfile:
+    path: 'C:\Program Files (x86)\CyberArk\PSM\Components\RDP\ConnectionComponent.xml'
+    regex: '(<Property Name="SessionIdleTimeoutMinutes" Value=")\d+(" />)'
+    line: '\g<1>{{ psm_idle_timeout_minutes }}\g<2>'

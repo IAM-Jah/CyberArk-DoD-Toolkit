@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "type": "http-collection",
+  "name": "PAM Admin \u2013 DoD",
+  "requests": [
+    {
+      "name": "Logon",
+      "method": "POST",
+      "url": "{{pvwa}}/PasswordVault/API/Auth/CyberArk/Logon",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "username": "{{username}}",
+        "password": "{{password}}"
+      },
+      "tests": {
+        "statusCode": "=== 200",
+        "save": "token"
+      }
+    },
+    {
+      "name": "Create Safe (Tier-aware)",
+      "method": "POST",
+      "url": "{{pvwa}}/PasswordVault/API/Safes",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "{{token}}"
+      },
+      "body": {
+        "safeName": "Tier{{tier}}-{{enclave}}-{{system}}",
+        "description": "Tier{{tier}} safe for {{system}} in {{enclave}}",
+        "managingCPM": "PasswordManager",
+        "OLACEnabled": true,
+        "NumberOfDaysRetention": 3650,
+        "AutoPurgeEnabled": true,
+        "DoDTags": {
+          "Tier": "{{tier}}",
+          "POAM": "{{poamId}}",
+          "Owner": "{{owner}}"
+        }
+      }
+    },
+    {
+      "name": "Get Master Policy",
+      "method": "GET",
+      "url": "{{pvwa}}/PasswordVault/API/Configuration/MasterPolicy",
+      "headers": {
+        "Authorization": "{{token}}"
+      }
+    },
+    {
+      "name": "Logoff",
+      "method": "POST",
+      "url": "{{pvwa}}/PasswordVault/API/Auth/Logoff",
+      "headers": {
+        "Authorization": "{{token}}"
+      }
+    }
+  ]
+}

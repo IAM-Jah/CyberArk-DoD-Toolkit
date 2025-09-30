@@ -1,0 +1,3 @@
+- name: Placeholder - Install PSMP package
+  ansible.builtin.debug:
+    msg: "Install PSMP package here (rpm/yum). Register to Vault via setup script."

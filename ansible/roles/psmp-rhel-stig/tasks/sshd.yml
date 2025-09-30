@@ -1,0 +1,8 @@
+- name: Deploy hardened sshd_config for PSMP
+  ansible.builtin.copy:
+    src: sshd_config.psmp
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: '0600'
+  notify: restart sshd

@@ -1,0 +1,1 @@
+Hardened **Windows PSM** build role. Aligns with STIG intent while retaining CyberArk functionality. Review `/compliance/stig-exception-matrix/Windows-PSM.md` for exceptions and compensating controls.

@@ -1,0 +1,3 @@
+- name: Enable FIPS mode (example; reboot required)
+  ansible.builtin.command: fips-mode-setup --enable
+  when: ansible_facts['os_family'] == 'RedHat'

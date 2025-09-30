@@ -1,0 +1,4 @@
+- hosts: psm
+  gather_facts: yes
+  roles:
+    - role: psm-windows-stig

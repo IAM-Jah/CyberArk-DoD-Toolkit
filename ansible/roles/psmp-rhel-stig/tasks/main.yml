@@ -1,0 +1,11 @@
+- name: Include FIPS setup
+  ansible.builtin.import_tasks: fips.yml
+
+- name: Include SSHD hardening
+  ansible.builtin.import_tasks: sshd.yml
+
+- name: Include PSMP install/config
+  ansible.builtin.import_tasks: psmp-install.yml
+
+- name: Include auditd rules
+  ansible.builtin.import_tasks: auditd.yml

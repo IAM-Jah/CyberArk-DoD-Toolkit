@@ -1,0 +1,1 @@
+This matrix captures **known STIG frictions** for CyberArk PSM on Windows and recommended **compensating controls**. Use the row schema in `_schema.csv` to contribute additional findings (PVWA/IIS, Vault, RHEL PSMP).

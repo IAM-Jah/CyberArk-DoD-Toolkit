@@ -1,0 +1,3 @@
+psm_idle_timeout_minutes: 30
+psm_disable_clipboard: true
+tier_label: "Tier0"

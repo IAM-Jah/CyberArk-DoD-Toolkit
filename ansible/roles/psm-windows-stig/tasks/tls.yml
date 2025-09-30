@@ -1,0 +1,6 @@
+- name: Apply hardened SCHANNEL cipher settings (FIPS-aligned example)
+  ansible.windows.win_regedit:
+    path: HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server
+    name: Enabled
+    data: 1
+    type: dword

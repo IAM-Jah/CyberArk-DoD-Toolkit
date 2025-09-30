@@ -1,0 +1,5 @@
+- hosts: psmp
+  become: yes
+  gather_facts: yes
+  roles:
+    - role: psmp-rhel-stig
